@@ -32,6 +32,7 @@ Jekyll是一个Ruby Gem，所以可以用gem安装，根据下列步骤，很容
 网站改成你自己的github page的地址，也就是新创建一个repo然后取名字为username.github.io就可以了，其中username改成你自己的名字。这样就可以通过ninjadq.github.io来访问了。
 
 # 绑定域名
-  如果想绑定自己的域名的话也很方便
+如果想绑定自己的域名的话也很方便
+
 1. 在域名托管网站新加一个A记录，然后IP地址填写`192.30.252.153`
 2. 在你的repo中添加一个文件名为CNAME的文件，里面的内容为你的域名，比如`ninjadq.com`。
