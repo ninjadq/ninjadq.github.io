@@ -149,7 +149,7 @@ nav {
     }
 
     pre code {
-        margin: 1em -#{$padding-side}px 1em -#{$padding-side}px;
+        margin: 1em #{$padding-side}px 1em #{$padding-side}px;
         padding-left: #{$padding-side}px;
         padding-right: #{$padding-side}px;
         border-color: #e0e0e0 !important;
