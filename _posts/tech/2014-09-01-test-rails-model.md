@@ -5,25 +5,28 @@ category: tech
 tags: [rails, test, rspec, model]
 ---
 
-# Rspec Note 1: Model
-
 ## 测试的哲学
 * 测试应该是可靠的
 * 测试应该容易书写
 * 测试应该容易理解
+
 
 ## 一些妥协
 * 速度不是测试中关注的重点
 * 过于DRY的代码不是测试中关注的重点
 [参考原文](http://everydayrails.com/2012/03/12/testing-series-intro.html#sthash.CilJZyad.dpuf)
 
-## Model Specs
+
+## Model的Specs
 1. 为当前的Model创建一个spec
 2. 可以使用factories来简化测试数据的维护和创建
 3. 为Model的validation，class，以及instance method写能够通过的测试用例
 
+
 ### get started
 A model spec should include tests for the following
+
+
 #### factory默认生成的对象必须合法
 
 ```ruby
