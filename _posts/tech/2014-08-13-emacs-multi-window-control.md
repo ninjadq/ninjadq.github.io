@@ -1,6 +1,6 @@
 ---
 layout: post
-title: emacs中的一些关于多窗口基本命令
+title: Emacs中的一些关于多窗口基本命令
 category: tech
 tags: [linux, emacs]
 ---

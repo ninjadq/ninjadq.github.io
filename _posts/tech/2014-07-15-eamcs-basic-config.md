@@ -90,7 +90,7 @@ el-get功能与package.el类似，但是他会自动的安装依赖的包，安�
 
 Jedi.el是Python在emacs下的一个自动补全的包，首先需要安装virtualenv
 
-```shell
+```bash
 sudo apt-get install python-virtualenv
 ```
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: rails中model测试的一些方法
+title: Rails中model测试的一些方法
 category: tech
 tags: [rails, test, rspec, model]
 ---

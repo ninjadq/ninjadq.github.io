@@ -1,5 +1,19 @@
+/*
 @import url(http://fonts.googleapis.com/css?family=Overlock);
 @import url(http://fonts.googleapis.com/css?family=Coda);
+*/
+@font-face { 
+  font-family: Overlock;
+  src: url('/assets/themes/sext-v/css/Overlock-Regular.ttf');
+} 
+@font-face { 
+  font-family: Coda;
+  src: url('/assets/themes/sext-v/css/Coda-Regular.ttf');
+} 
+@font-face { 
+  font-family: SourceCodePro; 
+  src: url('/assets/themes/sext-v/css/SourceCodePro-Regular.ttf'); 
+} 
 /*------------------------------------
 * sext-v
 *
@@ -10,6 +24,12 @@
 * |/ | (~ (~
 * |\.|._)._)
 * --------------------------------- */
+
+/*-----------------------------------
+* @edited_by dengqian@foxmail.com
+* @link http://ninjadq.com;
+* @at 2014-09-27
+-------------------------------------*/
 a {
   color: #3399cc; }
   a:hover {
@@ -83,9 +103,10 @@ nav {
     border: 1px solid #e0e0e0;
     margin: 2em 0;
     border-radius: 5px; }
+
   #content a {
     color: #3399cc; }
-    #content a:hover {
+   #content a:hover {
       color: #55bbee; }
   #content .post img {
     max-width: 686px;
@@ -132,7 +153,7 @@ nav {
     padding-right: 25px;
     border-color: #e0e0e0 !important;
     font-size: 13px;
-    font-family: Menlo, monospace;
+    font-family: SourceCodePro, monospace;
     line-height: 1.6;
     display: block;
     overflow: auto; }

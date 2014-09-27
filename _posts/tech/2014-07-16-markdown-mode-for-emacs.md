@@ -1,6 +1,6 @@
 ---
 layout: post
-title: emacs安装markdown插件
+title: Emacs安装markdown插件
 category: tech
 tags: [markdown, emacs]
 ---
