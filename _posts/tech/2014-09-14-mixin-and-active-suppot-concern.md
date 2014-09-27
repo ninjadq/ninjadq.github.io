@@ -2,10 +2,8 @@
 layout: post
 title: 关于Mixin和ActiveSupport::Concern
 category: tech
-tags: [emacs, id]
+tags: [ruby, rails, activesupport]
 ---
-
-# Mixin和ActiveSupport::Concern
 
 ##ruby对象模型
 
@@ -300,6 +298,7 @@ class Host
   include Bar # works, Bar takes care now of its dependencies
 end
 ```
+
 
 ##参考资料
 * [Concerning Yourself with ActiveSupport::Concern](http://www.fakingfantastic.com/2010/09/20/concerning-yourself-with-active-support-concern/)
