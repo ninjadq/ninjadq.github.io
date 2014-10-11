@@ -22,7 +22,7 @@ gem install rspec
 ```
 
 你可以测试一下，下面是官网的例子。
-1. 新建一个`game_spec.rb`的文件，里面内容为
+* 新建一个`game_spec.rb`的文件，里面内容为
 
 ```ruby
 require './game'
@@ -36,8 +36,8 @@ describe Game do
   end
 end
 ```
-2. 现在在终端里面输入 `rspec`，当然，测试是无法通过的。因为你还没有开始写代码。
-3. 现在来创建一个新的文件`game.rb`，将代码写进去吧。
+* 现在在终端里面输入 `rspec`，当然，测试是无法通过的。因为你还没有开始写代码。
+* 现在来创建一个新的文件`game.rb`，将代码写进去吧。
 
 ```ruby
 class Game
@@ -49,10 +49,10 @@ class Game
   end
 end
 ```
-4. 好了，现在再运行`rspec`就可以发现测试通过了。
+* 好了，现在再运行`rspec`就可以发现测试通过了。
 
 ## Guard的安装
-1. 首先创建一个`Gemfile`，然后里加上这些内容
+* 首先创建一个`Gemfile`，然后里加上这些内容
 
 ```ruby
 source 'https://rubygems.org'
@@ -63,8 +63,8 @@ group :development do
 end
 ```
 
-2. 然后输入`bundle`命令安装
-3. 命令行输入下面命令生成`guardfile`
+* 然后输入`bundle`命令安装
+* 命令行输入下面命令生成`guardfile`
 
 ```bash
 bundle exec guard init
@@ -73,9 +73,11 @@ bundle exec guard init
 ## Guard与RSpec合体
 其实现就可以使用了，但是怎么让他们方便的合体呢？有一个Gem，Guard-Rspec可以帮助你。
 
-1. 在Gemfile的develop组添加 `gem 'guard-rspec', require: false`
-2. 命令行中输入下面命令，在`guardfile`添加一些配置内容
+* 在Gemfile的develop组添加 `gem 'guard-rspec', require: false`
+* 命令行中输入下面命令，在`guardfile`添加一些配置内容
+
 ```ruby
 guard init rspec
 ```
-3. 好了，高完后，就可以直接输入`guard`运行啦～
+
+* 好了，高完后，就可以直接输入`guard`运行啦～
