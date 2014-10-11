@@ -36,7 +36,6 @@ describe Game do
   end
 end
 ```
-
 2. 现在在终端里面输入 `rspec`，当然，测试是无法通过的。因为你还没有开始写代码。
 3. 现在来创建一个新的文件`game.rb`，将代码写进去吧。
 
@@ -50,7 +49,6 @@ class Game
   end
 end
 ```
-
 4. 好了，现在再运行`rspec`就可以发现测试通过了。
 
 ## Guard的安装
@@ -77,4 +75,7 @@ bundle exec guard init
 
 1. 在Gemfile的develop组添加 `gem 'guard-rspec', require: false`
 2. 命令行中输入下面命令，在`guardfile`添加一些配置内容
+```ruby
+guard init rspec
+```
 3. 好了，高完后，就可以直接输入`guard`运行啦～
