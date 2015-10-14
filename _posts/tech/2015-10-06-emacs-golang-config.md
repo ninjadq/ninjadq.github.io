@@ -7,11 +7,12 @@ category: tech
 # 用到的插件
 
 主要用到了如下几个插件
-* [go-mode](https://github.com/dominikh/go-mode.el)
-* [go-flymake](https://github.com/dougm/goflymake)
-* [go-code](https://github.com/nsf/gocode)
-* [go-company](https://github.com/nsf/gocode/blob/master/emacs-company/company-go.el)
-* [yasnippet](https://github.com/capitaomorte/yasnippet)
+
+  * [go-mode](https://github.com/dominikh/go-mode.el)
+  * [go-flymake](https://github.com/dougm/goflymake)
+  * [go-code](https://github.com/nsf/gocode)
+  * [go-company](https://github.com/nsf/gocode/blob/master/emacs-company/company-go.el)
+  * [yasnippet](https://github.com/capitaomorte/yasnippet)
 
 ## Go-mode
 
