@@ -4,13 +4,7 @@ title:   about
 description:  关于
 ---
 
-喜欢奇怪的东西
-
-相信互联网
-
-现在是Ruby实习攻城狮
-
-同时也是Linux粉，也爱Python和Go
+同时也是Linux粉，擅长Python和Go
 
 美好的事情一直在发生^_^
 
