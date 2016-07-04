@@ -1,17 +1,18 @@
 ---
 layout: post
-title: Project Calico的介绍
+title: Calico 网络介绍
 category: tech
 tags: [network, docker]
 ---
 
 # Calico 简介
+
 Calico自称是一种新的虚拟网络，可以使用纯粹的三层方法与云编排系统集成，使得虚拟
 机，容器，或者workload之间的安全的IP通信成为可能。
 
 基于Internet中scalable的IP网络的概念，Calico自己搞了一个幺蛾子叫做vRouter，每个
 compute node上都拥有一个vRouter，它利用了Linux内核的转发引擎，而不是vSwitch。
-vRouter通过BGP协议传播各个workload之间的可达性信息（即路由）至数据中心其他结点。
+vRouter通过BGP协议传播各个**Workload(每个虚机或者容器)**。之间的可达性信息（即路由）至数据中心其他结点。
 小规模部署的时候可以直接部署，大规模部署的时候可以利用BGP route reflector。
 
 Calico直接与数据中心的物理组件（L2设备和L3设备）互为peer，不需要NAT, tunnel,
@@ -34,7 +35,7 @@ tenant隔离，securtiy groups,以及一些额外的reachability的限制。
 在Calico 网络中，workload中进出的IP报文的路由和被墙是通过workload所在的host上
 的路由表和iptables决定的。Calico保证无论workload怎么乱搞，都能返回下一跳MAC地址
 为其所在host。当有一个发送给某workload的报文时，最后一跳是从目的workload的host
-到workload。
+到workload(即从宿主机到容器或者虚机)。
 
 假设一些workload的IPv4地址被分配为某数据中心的私有子网10.65/16，而他们的host们
 属于IP网段172.18.203/24，这时候，你查看路由表，会看到类似下面这样的信息。
@@ -63,7 +64,9 @@ tapa429fb36-04连接10.65.0.24。后缀为.21, .22 and .23 的workload都在
 
 
 # Calico 系统架构
+
 Calico由以下系统组件组成
+
   * Felix
   * Orchestrator Plugin
   * etcd
@@ -71,6 +74,7 @@ Calico由以下系统组件组成
   * BGP Route Reflector
 
 ## Felix
+
 Felix是一个运行在每一台提供endpoint的机器上deamon，Felix的主要功能有以下：
 
   * 接口管理：Felix把一些接口的信息编程到Kernel中去，以正确的处理各个endpoint发出的报文(其实主要就是改MAC)
@@ -79,6 +83,7 @@ Felix是一个运行在每一台提供endpoint的机器上deamon，Felix的主�
   * 状态报告：Felix会报告一些关于host的网络健康信息，尤其会汇报一些配置的错误和问题，这些消息都会写到etcd中去
 
 ## Orchestrator Plugin
+
 没有一个单独的“Orchestrator Plugin”，有的是为每个不同的云平台提供的不同的插件。这些插件的目的都是为了让Calico能够更加与云平台紧密结合
 
   * API translate：不同的云平台都有自己的api，所以Orchestrator很重要的一个作用就是翻译这些api到colico来
@@ -91,6 +96,7 @@ Felix是一个运行在每一台提供endpoint的机器上deamon，Felix的主�
 
 
 ## BGP Client
+  * BIRD
 
 ## BGP Route Reflector
 
