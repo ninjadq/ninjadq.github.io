@@ -135,6 +135,7 @@ calico 可以非常好的与容器结合，container是容器相关的命令
   ```
   
   * `calicoctl container add <CONTAINER> <IP> [--interface=<INTERFACE>]`
+
       1. 保证要有root权限
       2. 通过inspect_container,从容器名称获取容器信息,并获取容器id
       3. 检验etcd中`/calico/v1/host/%(hostname)s/workload/docker/%(container_id)s/endpoint/`键的所有叶子,然后通过第一个叶子的中的值的取endpoint_id值,以确定它是否加入calico网络,未加入才能继续
@@ -148,11 +149,13 @@ calico 可以非常好的与容器结合，container是容器相关的命令
   * `calicoctl container <CONTAINER> ip (add|remove) <IP> [--interface=<INTERFACE>]`
   
   * `calicoctl container <CONTAINER> endpoint-id show`
+
       1. 以容器的名字为参数,调用docker\_client的inspect_container,获取容器信息
       2. 通过容器信息的id选项获取容器id
       3. 通过hostname,orchestrator_id,和上一步获取的容器id,在etcd中查找`/calico/v1/host/%(hostname)s/workload/%(orchestrator_id)s/%(workload_id)s/endpoint/`中存储的值,并返回
 
 ### endpoint
+
 endpoint 指calico网络模型中的一个结点
 
 ```
