@@ -1,8 +1,8 @@
 ---
 layout: post
-title: calicoctl详解
+title: 当把一个容器加入 Calico 网络的时候，Calico 在做什么
 category: tech
-tags: [network, docker]
+tags: [network, docker, calico]
 ---
 
 本文是介绍calico中如何将container加入到calico网络中
