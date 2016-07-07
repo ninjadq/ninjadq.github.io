@@ -9,7 +9,7 @@ tags: [network, docker, calico]
 
 libnetwork 提出了一个很妖的模型叫做草泥马（CNM），如图所示：
 
-!(CNM)[https://blog.docker.com/media/2015/04/cnm-model.jpg]
+![CNM](https://blog.docker.com/media/2015/04/cnm-model.jpg)
 
 图中有三个重要的幺蛾子
 
