@@ -109,7 +109,7 @@ nav {
     max-width: 650px;
     display: block;
     box-shadow: #999999 0px 8px 4px -4px;
-    margin: 0.5em auto; }
+    margin: 0.5em 0.5em 0.2em 0.2em auto; }
   #content .post .image-700 {
     margin-left: -28px;
     margin-right: -28px;
