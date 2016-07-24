@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
 这样之后就能通过默认端口访问采用数据了
 
-![sample](http://7o50i4.com1.z0.glb.clouddn.com/profiling-python%2Fsample_data.png)
+[![sample](http://7o50i4.com1.z0.glb.clouddn.com/profiling-python%2Fsample_data.png)][1]
 
 接下来是采集和可视化的组件。因为采集的时间序列数据需要利用dbm这个库存储在本地，也有一些依赖，所以要先创建数据文件夹，安装相应的依赖：
 
@@ -72,7 +72,7 @@ python setup.py install
 python -m stackcollector.collector --host localhost --ports 16384 --interval 60
 ```
 
-![采集脚本](http://7o50i4.com1.z0.glb.clouddn.com/profiling-python%2Fcollector.png)
+[![采集脚本](http://7o50i4.com1.z0.glb.clouddn.com/profiling-python%2Fcollector.png)][2]
 
 此脚本会每隔60秒，调用对应的接口，采集数据并且存入本地的时间序列库。
 
@@ -86,7 +86,7 @@ python -m stackcollector.visualizer --port 5555
 
 这个会从时序库中读出数据并且在浏览器中画出火焰图。http请求类似`http://localhost:5555?from=-15minutes`这样。
 
-![火焰图](http://7o50i4.com1.z0.glb.clouddn.com/profiling-python%2Fflame_graph.png)
+[![火焰图](http://7o50i4.com1.z0.glb.clouddn.com/profiling-python%2Fflame_graph.png)][3]
 
 
 ## 碰到的问题
@@ -103,3 +103,8 @@ python -m stackcollector.visualizer --port 5555
 1. 这个库有这么一个问题，每个进程都需要暴露一个端口给采集器。采集器来采集并且聚合。这样一来，你需要给每个进程实例都提供一个端口，数目少好说，但是数目一多，或者不固定的话，就很难采集数据了。因为需要涉及到动态的分配端口。所以是否可以修改代码，在采样的时候，直接将数据推送到数据聚合的服务端，并且打上自己信息的标签以区分不同服务。
 
 2. 这一套思路应该延续到其他的带有runtime的环境，可否实现一个Go语言版本。
+
+
+[1]: http://7o50i4.com1.z0.glb.clouddn.com/profiling-python%2Fsample_data.png "采样"
+[2]: http://7o50i4.com1.z0.glb.clouddn.com/profiling-python%2Fcollector.png "采集"
+[3]: http://7o50i4.com1.z0.glb.clouddn.com/profiling-python%2Fflame_graph.png "火焰图"
