@@ -38,13 +38,12 @@ tags: [distributed system, database]
  
  对SQL到关系代数的映射以及关系代数操作符不是我们的重点，所以我们不会深入讨论这些，而是在分布式系统中使用这些关系代数操作符。先看一下下面的SQL语句：
  
- ```sql
- 
+```sql
 SELECT sum(price) FROM orders, nation
 WHERE orders.nation = nation.name AND
       orders.date >= '2012-01-01' AND
       nation.region = 'Asia';
- ```
+```
  
  这个简单的查询join了sales表和nation表，然后查询对应的记录。然后在所有的结果里面计算销售的总额。现在让我们看看这个query的分布式的罗辑查询的计划。
  
@@ -68,7 +67,9 @@ WHERE orders.nation = nation.name AND
  
  
  [1] 这篇博文中+操作符和sum()聚合函数可以互换，以简化问题。实际上这两个操作是相关的，而且在分布式关系代数中有不同的意义。
+
  [2] 第二个不同是在这个罗辑方案中，分布式操作符能够操作一个或者多个数据片段。
+
  [3] Join节点是一个二分操作符（Binary operator），所以，我们在优化查询方案涉及到Join的时候，利用他的分布式属性。
  
  原文地址：
