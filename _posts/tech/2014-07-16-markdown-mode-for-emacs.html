@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>2014-07-16-markdown-mode-for-emacs.html</title>
+
+</head>
+
+<body>
+
+<hr />
+
+<p>layout: post
+title: Emacs安装markdown插件
+category: tech</p>
+
+<h2>tags: [markdown, emacs]</h2>
+
+<h1>添加markdown扩展</h1>
+
+<h2>安装markdown</h2>
+
+<p>Ubuntu下输入命令</p>
+
+<p><code>bash
+  sudo apt-get install markdown
+</code></p>
+
+<h2>安装markdown的插件</h2>
+
+<ol>
+<li>需要安装<code>markdown-mode</code>进入emacs，输入<code>M-x el-get-install RET</code></li>
+<li>找到<code>markdown-mode</code>，安装</li>
+<li>将下面的代码粘贴到.emcas文档</li>
+</ol>
+
+<p><code>elisp
+;;enable markdown mode
+(autoload 'markdown-mode "markdown-mode.el"
+"Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+</code></p>
+
+<h2>markdown 常用快捷键</h2>
+
+<h3>超链接</h3>
+
+<ul>
+<li><code>C-c C-a l [文本](url)</code></li>
+<li><code>C-c C-a L [文本](label)</code></li>
+<li><code>C-c C-a u 直接插入链接</code></li>
+</ul>
+
+<h3>图像</h3>
+
+<ul>
+<li><code>C-c C-i i</code></li>
+</ul>
+
+<h3>风格</h3>
+
+<ul>
+<li><code>C-c C-s e 斜体</code></li>
+<li><code>C-c C-s s 粗体</code></li>
+<li><code>C-c C-s b 缩进</code></li>
+<li><code>C-c C-s p 跳格</code></li>
+</ul>
+
+<h3>标题</h3>
+
+<ul>
+<li><code>C-c C-t number 标题从1到6</code></li>
+</ul>
+
+<h3>查看效果</h3>
+
+<ul>
+<li><code>C-c C-c m 运行markdown 并且查看HTML代码</code></li>
+<li><code>C-c C-c p 运行markdown 并打开浏览器预览</code></li>
+</ul>
+
+</body>
+</html>
